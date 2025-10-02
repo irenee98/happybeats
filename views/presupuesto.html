@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Irene">
+    <meta name="category" content="Spanish, Musica, CDs, Vinilos">
+    <meta name="description" content="Tienda de música y vinilos, de lo más antiguo a lo más actual.">
+    <title>Happy Beats</title>
+    <link rel="stylesheet" href="./../css/general.css">
+    <link rel="stylesheet" href="./../css/presupuesto.css">
+    <script src="./../js/formulario.js"></script>
+</head>
+<body>
+    <header>
+        <img src="./../imagenes/header.PNG" alt="Happy Beats">
+    </header>
+    <nav>
+        <a href="./../index.html">INICIO</a>
+        <a href="./galeria.html">GALERÍA</a>
+        <a href="#" id="activo">PRESUPUESTO </a>
+        <a href="./contacto.html">CONTACTO</a>
+    </nav>
+    <main>
+        <h1>FORMULARIO DE SOLICITUD</h1>
+        <p>Dinos que producto quieres y te decimos cuánto puede costar.</p><br>
+        <form action="./../index.html" method="post" name="formulario" onsubmit="return validarFormulario()">
+        <p>Datos del cliente:</p>
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" maxlength="15">
+            <input type="button" name="nboton" value="Validar" onclick="validarNombre()"><br><br>
+            <label for="apellidos">Apellidos: </label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Escribe tus apellidos" maxlength="40">
+            <input type="button" name="aboton" value="Validar" onclick="validarApellidos()"><br><br>
+            <label for="telefono">Teléfono: </label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Escribe tu número" maxlength="9">
+            <input type="button" name="tboton" value="Validar" onclick="validarTelefono()"><br><br>
+            <label for="correo">Correo: </label>
+            <input type="email" id="correo" name="correo" placeholder="Escribe tu correo">
+            <input type="button" name="cboton" value="Validar" onclick="validarCorreo()"><br><br>
+
+        <p>Presupuesto:</p>
+            <label for="producto">Tipo de producto: </label>
+            <select name="producto" id="producto" onchange="calcularPresupuesto()">
+                <option value="">No seleccionado</option>
+                <option value="producto1" id="D" data-precio="10">Disco</option>
+                <option value="producto2" id="V" data-precio="20">Vinilo</option>
+                <option value="producto3" id="R" data-precio="50">Reproductores</option>
+              </select><br><br>
+              <label for="plazo">Selecciona el plazo (en meses):</label>
+              <input type="number" id="plazo" name="plazo" min="1" max="12" onchange="calcularPresupuesto()"><br><br>
+              <label>Elige los extras para el producto:</label><br><br>
+              <input type="checkbox" id="extra1" onchange="calcularPresupuesto()">Regalo para envolver.
+              <input type="checkbox" id="extra2" onchange="calcularPresupuesto()">Añadir un nombre.
+              <input type="checkbox" id="extra3" onchange="calcularPresupuesto()">Añadir sticker.<br><br>
+
+              <label>Presupuesto estimado:</label>
+              <span id="presupuesto">€0.00</span>
+
+
+        <p>Aceptación condiciones y envío del presupuesto:</p>
+            <input type="checkbox" id="aceptar">He leído la política de privacidad.<br><br>
+            <input type="submit" value="Enviar formulario" id="enviar">
+            <input type="reset" value="Borrar datos" id="borrar">
+        </form>
+    </main>
+    <footer>
+        <div class="redes_sociales">
+            <p>Síguenos en nuestras redes sociales:</p>
+            <a href="http://www.facebook.com" target="_blank"><img src="./../imagenes/facebook.png" alt="Facebook"></a>
+            <a href="http://www.instagram.com" target="_blank"><img src="./../imagenes/instagram.png" alt="Instagram"></a>
+            <a href="http://www.twitter.com" target="_blank"><img src="./../imagenes/twitter.jpeg" alt="Twitter"></a>
+            <a href="http://www.youtube.com" target="_blank"><img src="./../imagenes/youtube.png" alt="YouTube"></a>
+        </div>
+        <div class="avisolegal">
+        <p>- Política de privacidad</p>
+        <p>- Política de cookies</p>
+        <p>- Preferencias de cookies</p>
+        <p>- Información sobre la protección de datos</p>
+        <p>- Términos y condiciones de venta</p>
+        <p>- Política de derechos humanos</p></div>
+        <div class="direccion_empresa">
+            <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <strong>Direción de empresa:</strong> Calle Salitre, 49, Distrito Centro, 29002 Málaga</p>
+        </div>
+    </footer>
+</body>
+</html>

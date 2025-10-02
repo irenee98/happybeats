@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Irene">
+    <meta name="category" content="Spanish, Musica, CDs, Vinilos">
+    <meta name="description" content="Tienda de música y vinilos, de lo más antiguo a lo más actual.">
+    <title>Happy Beats</title>
+        <!--CSS Estilos-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css">
+    <link rel="stylesheet" href="./../css/general.css">
+</head>
+<body>
+    <header>
+        <img src="./../imagenes/header.PNG" alt="Happy Beats">
+    </header>
+    <nav>
+        <a href="./../index.html">INICIO</a>
+        <a href="./galeria.html">GALERÍA</a>
+        <a href="./presupuesto.html">PRESUPUESTO </a>
+        <a href="#" id="activo">CONTACTO</a>
+    </nav>
+    <main>
+        <h1>DATOS DE LA EMPRESA</h1>
+        <img src="./../imagenes/logotipo.png" alt="logotipo"  id="logo">
+        <div class="data"><p><strong>Nuestra empresa:</strong>Happy Beats</p>
+        <p><strong>Teléfono fijo:</strong>952596447</p>
+        <p><strong>Teléfono móvil:</strong>623391957</p>
+        <p><strong>Fax:</strong>902955354</p></div>
+        <h2>UBICACIÓN DE LA EMPRESA</h2>
+        <p>Puedes encontrarnos aquí:</p>
+        <div id="mapa"></div>
+        <p><strong>Direción de empresa:</strong> Calle Salitre, 49, Distrito Centro, 29002 Málaga<br></p>
+        <p>En caso de que no puedas venir, también nos puedes escribir por aquí: <a href="mailto:happybeats@gmail.com">happybeats@gmail.com</a></p>
+    </main>
+    <footer>
+        <div class="redes_sociales">
+            <p>Síguenos en nuestras redes sociales:</p>
+            <a href="http://www.facebook.com" target="_blank"><img src="./../imagenes/facebook.png" alt="Facebook"></a>
+            <a href="http://www.instagram.com" target="_blank"><img src="./../imagenes/instagram.png" alt="Instagram"></a>
+            <a href="http://www.twitter.com" target="_blank"><img src="./../imagenes/twitter.jpeg" alt="Twitter"></a>
+            <a href="http://www.youtube.com" target="_blank"><img src="./../imagenes/youtube.png" alt="YouTube"></a>
+        </div>
+        <div class="avisolegal">
+        <p>- Política de privacidad</p>
+        <p>- Política de cookies</p>
+        <p>- Preferencias de cookies</p>
+        <p>- Información sobre la protección de datos</p>
+        <p>- Términos y condiciones de venta</p>
+        <p>- Política de derechos humanos</p></div>
+        <div class="direccion_empresa">
+            <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <strong>Direción de empresa:</strong> Calle Salitre, 49, Distrito Centro, 29002 Málaga</p>
+        </div>
+    </footer>
+
+<!--Javascript-->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script src="./../js/contacto.js"></script>
+
+</body>
+</html>

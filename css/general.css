@@ -1,0 +1,142 @@
+header{
+    text-align: center;
+}
+header img{
+    height: auto;
+    width: 50%;
+}
+nav{
+    margin-left: 100px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    position: sticky;
+    top: 20px;
+
+}
+p a{
+    color: black;
+    background-color: rgba(240, 78, 78, 0.499);
+}
+p a:hover{
+    font-size: larger;
+    text-decoration: none;
+}
+nav a {
+    text-decoration:none;
+    color: white;
+    -webkit-transition: color .4s linear;
+    -moz-transition: color .4s linear;
+    -ms-transition: color .4s linear;
+    -o-transition: color .4s linear;
+    transition: color .4s linear;
+    display: inline-block;
+    margin-left: 170px;
+    border: 1px solid;
+    padding: 6px;
+    border-radius: 10px;
+    background: rgb(0, 199, 199);
+}
+nav a:hover {
+    color: black;
+    cursor: pointer;
+    -webkit-transition: color .4s linear;
+    -moz-transition: color .4s linear;
+    -ms-transition: color .4s linear;
+    -o-transition: color .4s linear;
+    transition: color .4s linear;
+}
+#activo{
+    background-color: rgb(250, 172, 54);
+    color: black;
+}
+
+main{
+    margin: 10px;
+    width: 80%;
+    margin-left: 125px;
+    background-color: rgba(240, 78, 191, 0.212);
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 30px;
+}
+main img{
+    width: auto;
+}
+footer{
+    background-color:rgba(0, 177, 177, 0.541);
+    color: aliceblue;
+    padding: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
+    margin-left: 125px;
+}
+.redes_sociales{
+    width: 40%;
+    padding: 5px;
+    position: relative;
+    float: left;
+    text-align: right;
+}
+.avisolegal{
+    width: 40%;
+    margin-left: 170px;
+    padding: 5px;
+    position: relative;
+    float: right;
+}
+footer img{
+    height: 50px;
+    width: 50px;
+}
+.direccion_empresa{
+    font-style: italic;
+    text-align: center;
+    margin-left: 30%;
+}
+#logo{
+    height: 250px;
+    width: auto;
+    margin-top: 50px;
+    position: absolute;
+    margin-left: 380px;
+    margin-bottom: 20px;
+}
+h1{
+    text-align: center;
+}
+h2{
+    margin: 60px;
+}
+#mapa{
+    margin-left: 50px;
+    width: 600px;
+    height: 450px;
+}
+p{
+    margin: 50px;
+    text-align: justify;
+}
+.centrar {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.data{
+    border: 1px solid black;
+    width: 70%;
+    margin-left: 30px;
+}
+.galeria{
+    text-align: center;
+}
+#caja{
+    border: 1px solid black;
+    height: 400px;
+    width: 80%;
+    padding: 30px;
+    margin-left: 100px;
+}
+
+section a{
+    margin-left: 100px;
+}
