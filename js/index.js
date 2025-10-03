@@ -1,10 +1,13 @@
 function cargar() {
     var objHttp = new XMLHttpRequest();
-    objHttp.open("GET", "https://noticias-music0.webnode.es/rss/all.xml", true);
+    var url = "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://noticias-music0.webnode.es/rss/all.xml");
+
+    objHttp.open("GET", url, true);
 
     objHttp.onreadystatechange = function () {
         if (objHttp.readyState === 4 && objHttp.status === 200) {
-            var documento = objHttp.responseXML;
+            var parser = new DOMParser();
+            var documento = parser.parseFromString(objHttp.responseText, "text/xml");
             var items = documento.getElementsByTagName("item");
             var cadena = "";
 
@@ -24,5 +27,6 @@ function cargar() {
 
     objHttp.send();
 }
+
 
 
