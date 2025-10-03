@@ -27,6 +27,3 @@ function cargar() {
 
     objHttp.send();
 }
-
-
-
