@@ -59,9 +59,7 @@ main{
     padding-right: 5px;
     padding-bottom: 30px;
 }
-main img{
-    width: auto;
-}
+
 footer{
     background-color:rgba(0, 177, 177, 0.541);
     color: aliceblue;
@@ -93,6 +91,7 @@ footer img{
     font-style: italic;
     text-align: center;
     margin-left: 30%;
+    margin-top: 500px;
 }
 #logo{
     height: 250px;
@@ -110,8 +109,8 @@ h2{
 }
 #mapa{
     margin-left: 50px;
-    width: 600px;
-    height: 450px;
+    width: 900px;
+    height: 500px;
 }
 p{
     margin: 50px;
@@ -121,6 +120,12 @@ p{
     text-align: center;
     margin-bottom: 40px;
 }
+
+.centrar img{
+    height: 450px;
+    width: auto;
+}
+
 .data{
     border: 1px solid black;
     width: 70%;
