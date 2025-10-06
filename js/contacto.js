@@ -1,120 +1,61 @@
-var mapa = L.map('mapa').setView([36.7217318,-4.4288972], 13);
+var mapa = L.map('mapa').setView([36.7217318, -4.4288972], 13);
 
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-        }).addTo(mapa);
-
-        
-        function getLocation() {
-          if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(showPosition);
-          } else {
-              alert("La geolocalización no es soportada por este navegador.");
-          }
-      }
-
-      
-      function showPosition(position) {
-          var Lat = position.coords.latitude;
-          var Lng = position.coords.longitude;
-
-          
-
-          
-          L.marker([Lat, Lng]).addTo(mapa)
-              .bindPopup("¡Usted está aquí!").openPopup();
-
-          
-          var empresa = L.latLng(36.7117318,-4.4288972); 
-
-          
-          L.Routing.control({
-              waypoints: [
-                  L.latLng(Lat, Lng), 
-                  empresa 
-              ],
-              language: 'es',
-              routeWhileDragging: true
-          }).addTo(mapa);
-      }
-
-      
-      getLocation();
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-var Icon = L.icon({
-  iconUrl: './../assets/leaflet/images/marker-icon.png',
-  shadowUrl: './../assets/leaflet/images/marker-shadow.png',
-  iconSize:[38,95],
-  shadowSize:[50,64],
-  iconAnchor:[22,94],
-  shadowAnchor: [4,62],
-  popupAnchor: [-3,-76]
-})
-
-var popup = L.popup().setLatLng([36.7117318,-4.4288972]).setContent('HappyBeats');
-
-var marker = L.marker([36.7117318,-4.4288972], {icon:Icon}).binPopup(popup).open().addTo(mapa);
-*/
-
-
-
-
-
-
-
-/*
-navigator.geolocation.getCurrentPosition(function (position) {
-    var lat= position.coords.latitude;
-    var lon = position.coords.longitude;
-    L.marker([lat,lon]).addTo(mapa).binPopup('Estás aquí');
-});
-
-
-    var empresaLocation = L.latLng(36.7117318,-4.4288972);
-
-
-
-    L.marker(empresaLocation).addTo(mapa).binPopup('Tu destino');
-
-    L.Routing.control({
-        waypoints: [
-            L.latLng(lat,lon), empresaLocation],
-        routewhileDragging: true
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
     }).addTo(mapa);
 
+    var empresa = L.latLng(36.7117318, -4.4288972);
 
-    mapa.fitBounds([L.latLng(lat, lon), empresaLocation]);*/
+    L.marker(empresa)
+      .addTo(mapa)
+      .bindPopup("Calle Salitre, 49, Distrito Centro, 29002 Málaga")
+      .openPopup();
 
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        alert("La geolocalización no es soportada por este navegador.");
+      }
+    }
 
+    function showPosition(position) {
+      var Lat = position.coords.latitude;
+      var Lng = position.coords.longitude;
+      var cliente = L.latLng(Lat, Lng);
 
+      L.marker(cliente)
+        .addTo(mapa)
+        .bindPopup("Tu ubicación")
+        .openPopup();
 
+      L.Routing.control({
+        waypoints: [
+          cliente,
+          empresa
+        ],
+        language: 'es',
+        routeWhileDragging: false,
+        showAlternatives: false,
+        createMarker: function() { return null; } // Evita marcadores duplicados
+      }).addTo(mapa);
+    }
 
-    
+    function showError(error) {
+      switch(error.code) {
+        case error.PERMISSION_DENIED:
+          alert("El usuario negó la solicitud de geolocalización.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          alert("La información de ubicación no está disponible.");
+          break;
+        case error.TIMEOUT:
+          alert("La solicitud para obtener la ubicación ha caducado.");
+          break;
+        default:
+          alert("Ocurrió un error desconocido.");
+      }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+    getLocation();
