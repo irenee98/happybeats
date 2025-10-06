@@ -3,11 +3,38 @@ form p{
     font-size: 18px;
 }
 form{
+
     border: 1px solid;
     width: 600px;
     margin-left: 50px;
     margin-bottom: 20px;
+    gap: 1rem;
     background:  rgba(116, 240, 78, 0.64);
     padding-left: 50px;
     padding-bottom: 30px;
+}
+
+
+form input,
+form select {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+form input[type="checkbox"] {
+    margin-top: 20px;
+}
+
+.meses{
+    margin-bottom: 20px;
+}
+
+.presupuesto{
+    margin-top: 30px;
+}
+
+
+form input[type="submit"],
+form input[type="reset"]{
+    margin-top: 20px;
 }
