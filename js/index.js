@@ -6,7 +6,6 @@ function cargar() {
         "https://corsproxy.io/?"
     ];
 
-    // probamos cada proxy hasta que funcione uno
     function intentarProxy(i) {
         if (i >= proxys.length) {
             document.getElementById("caja").innerHTML = "No se pudo cargar el feed (todos los proxys fallaron)";
@@ -40,3 +39,6 @@ function cargar() {
 
     intentarProxy(0);
 }
+
+// Llamar automáticamente al cargar la página
+window.addEventListener("DOMContentLoaded", cargar);
